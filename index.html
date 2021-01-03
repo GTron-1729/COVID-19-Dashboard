@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ganesh COVID Map</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        width: 100vw;
+        height: 100vh;
+        margin-top: 1px;
+      }
+      #h1 {
+        text-align: center;
+        background-color: rgb(46, 44, 44);
+        opacity: 1;
+        color: white;
+        font-family: "Audiowide", cursive;
+        margin-top: 2px;
+        font-size: 26px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="h1">COVID-19 World Tracker</h1>
+    </div>
+    <div id="map"></div>
+  </body>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"></script>
+
+  <script>
+    mapboxgl.accessToken =
+      "pk.eyJ1IjoiZ3Ryb24tMTcyOSIsImEiOiJja2poZGhtZmgwbmt5MnNxb2Jxa2hpNTh0In0.IaKB3prMRghyTMNoQswmFA";
+    var map = new mapboxgl.Map({
+      container: "map",
+      style: "mapbox://styles/mapbox/dark-v10", // here streets-v11 is light theme for dark do dark-v10
+      center: [0, 22],
+      zoom: 2,
+      minZoom: 2,
+      maxZoom: 6,
+    });
+  </script>
+
+  <script src="index.js"></script>
+</html>
